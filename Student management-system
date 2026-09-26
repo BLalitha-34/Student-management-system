@@ -1,0 +1,83 @@
+students = []
+
+def add_student():
+    roll = int(input("Enter Roll Number: "))
+    name = input("Enter Name: ")
+    age = int(input("Enter Age: "))
+    course = input("Enter Course: ")
+
+    student = {
+        "roll": roll,
+        "name": name,
+        "age": age,
+        "course": course
+    }
+
+    students.append(student)
+    print("Student added successfully!")
+
+
+def display_students():
+    if not students:
+        print("No student records found.")
+        return
+
+    print("\n===== STUDENT DETAILS =====")
+
+    for student in students:
+        print("Roll Number:", student["roll"])
+        print("Name:", student["name"])
+        print("Age:", student["age"])
+        print("Course:", student["course"])
+        print("---------------------------")
+
+
+while True:
+    print("\n===== STUDENT MANAGEMENT SYSTEM =====")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        add_student()
+
+    elif choice == 2:
+        display_students()
+
+    elif choice == 3:
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice!")
+
+OUTPUT:
+===== STUDENT MANAGEMENT SYSTEM =====
+1. Add Student
+2. Display Students
+3. Exit
+Enter your choice: 1
+Enter Roll Number: 3
+Enter Name: lalitha
+Enter Age: 18
+Enter Course: cse
+Student added successfully!
+===== STUDENT MANAGEMENT SYSTEM =====
+1. Add Student
+2. Display Students
+3. Exit
+Enter your choice: 2
+===== STUDENT DETAILS =====
+Roll Number: 3
+Name: lalitha
+Age: 18
+Course: cse
+---------------------------
+===== STUDENT MANAGEMENT SYSTEM =====
+1. Add Student
+2. Display Students
+3. Exit
+Enter your choice: 3
+Thank you!
